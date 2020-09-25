@@ -15,17 +15,25 @@ namespace WebSocketSimpleExample
 
         public void Websock_Client_Node()
         {
-            WebSocketClient = new WebSocketSharp.WebSocket(serverUri.ToString());
-            WebSocketClient.OnMessage += wsServer_NewDataReceived;
-            WebSocketClient.OnOpen += wsServer_NewSessionConnected;
-            WebSocketClient.OnError += wsServer_OnError;
-            WebSocketClient.OnClose += wsServer_Disconnect;
-            WebSocketClient.Connect();
+            try
+            {
+                WebSocketClient = new WebSocketSharp.WebSocket(serverUri.ToString());
+                WebSocketClient.OnMessage += wsServer_NewDataReceived;
+                WebSocketClient.OnOpen += wsServer_NewSessionConnected;
+                WebSocketClient.OnError += wsServer_OnError;
+                WebSocketClient.OnClose += wsServer_Disconnect;
+                WebSocketClient.Connect();
+                Console.WriteLine("Connection Open");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void wsServer_Disconnect(object sender, CloseEventArgs e)
         {
-            Console.Write("disconnect");
+            Console.Write("Connection Close");
         }
         private void wsServer_OnError(object sender, WebSocketSharp.ErrorEventArgs e)
         {
@@ -33,15 +41,14 @@ namespace WebSocketSimpleExample
         }
         private void wsServer_NewSessionConnected(object sender, EventArgs e)
         {
-            WebSocketClient.Send("User with ID: connected");
+            WebSocketClient.Send("User connected");
 
         }
         private void wsServer_NewDataReceived(object sender, MessageEventArgs e)
         {
             string result = e.Data.ToString();
-            Console.WriteLine("NewMessageReceived:" + e.Data.ToString());
+            Console.WriteLine("MessageReceived:" + e.Data.ToString());
         }
-
 
     }
 }

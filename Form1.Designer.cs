@@ -31,7 +31,7 @@
             this.Connect = new System.Windows.Forms.Button();
             this.Send_Message = new System.Windows.Forms.Button();
             this.Message = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ConsoleMessage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Connect
@@ -61,20 +61,20 @@
             this.Message.Size = new System.Drawing.Size(100, 20);
             this.Message.TabIndex = 3;
             // 
-            // textBox1
+            // ConsoleMessage
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 153);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 96);
-            this.textBox1.TabIndex = 4;
+            this.ConsoleMessage.Location = new System.Drawing.Point(31, 135);
+            this.ConsoleMessage.Multiline = true;
+            this.ConsoleMessage.Name = "ConsoleMessage";
+            this.ConsoleMessage.Size = new System.Drawing.Size(211, 96);
+            this.ConsoleMessage.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ConsoleMessage);
             this.Controls.Add(this.Message);
             this.Controls.Add(this.Send_Message);
             this.Controls.Add(this.Connect);
@@ -90,7 +90,7 @@
         private System.Windows.Forms.Button Connect;
         private System.Windows.Forms.Button Send_Message;
         private System.Windows.Forms.TextBox Message;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ConsoleMessage;
     }
 }
 

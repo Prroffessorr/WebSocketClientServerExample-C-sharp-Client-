@@ -10,7 +10,7 @@ namespace WebSocketSimpleExample
     class WebSocket
     {
         Uri serverUri = new Uri("ws://localhost:8080");
-        bool Connect_Disconnect = false;
+        bool Connect_Disconnect = false; 
 
         public WebSocketSharp.WebSocket WebSocketClient = null;
 

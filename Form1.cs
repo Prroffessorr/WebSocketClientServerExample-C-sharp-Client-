@@ -16,5 +16,21 @@ namespace WebSocketSimpleExample
         {
             InitializeComponent();
         }
+
+        WebSocket websocket = new WebSocket();
+
+        private void Connect_Click(object sender, EventArgs e)
+        {
+            websocket.Websock_Client_Node();
+        }
+
+        private void Send_Message_Click(object sender, EventArgs e)
+        {
+            if (Message.Text != null)
+            {
+
+                websocket.WebSocketClient.Send(Message.Text);
+            }
+        }
     }
 }

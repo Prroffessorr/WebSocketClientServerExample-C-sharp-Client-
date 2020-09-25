@@ -29,53 +29,54 @@
         private void InitializeComponent()
         {
             this.Connect = new System.Windows.Forms.Button();
-            this.Disconnect = new System.Windows.Forms.Button();
             this.Send_Message = new System.Windows.Forms.Button();
             this.Message = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Connect
             // 
-            this.Connect.Location = new System.Drawing.Point(31, 51);
+            this.Connect.Location = new System.Drawing.Point(31, 12);
             this.Connect.Name = "Connect";
-            this.Connect.Size = new System.Drawing.Size(104, 51);
+            this.Connect.Size = new System.Drawing.Size(211, 51);
             this.Connect.TabIndex = 0;
             this.Connect.Text = "Connect";
             this.Connect.UseVisualStyleBackColor = true;
-            // 
-            // Disconnect
-            // 
-            this.Disconnect.Location = new System.Drawing.Point(141, 51);
-            this.Disconnect.Name = "Disconnect";
-            this.Disconnect.Size = new System.Drawing.Size(101, 51);
-            this.Disconnect.TabIndex = 1;
-            this.Disconnect.Text = "Disconnect";
-            this.Disconnect.UseVisualStyleBackColor = true;
+            this.Connect.Click += new System.EventHandler(this.Connect_Click);
             // 
             // Send_Message
             // 
-            this.Send_Message.Location = new System.Drawing.Point(141, 117);
+            this.Send_Message.Location = new System.Drawing.Point(141, 77);
             this.Send_Message.Name = "Send_Message";
             this.Send_Message.Size = new System.Drawing.Size(101, 40);
             this.Send_Message.TabIndex = 2;
             this.Send_Message.Text = "Send Message";
             this.Send_Message.UseVisualStyleBackColor = true;
+            this.Send_Message.Click += new System.EventHandler(this.Send_Message_Click);
             // 
             // Message
             // 
-            this.Message.Location = new System.Drawing.Point(35, 128);
+            this.Message.Location = new System.Drawing.Point(31, 88);
             this.Message.Name = "Message";
             this.Message.Size = new System.Drawing.Size(100, 20);
             this.Message.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(31, 153);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(211, 96);
+            this.textBox1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Message);
             this.Controls.Add(this.Send_Message);
-            this.Controls.Add(this.Disconnect);
             this.Controls.Add(this.Connect);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -87,9 +88,9 @@
         #endregion
 
         private System.Windows.Forms.Button Connect;
-        private System.Windows.Forms.Button Disconnect;
         private System.Windows.Forms.Button Send_Message;
         private System.Windows.Forms.TextBox Message;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

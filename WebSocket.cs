@@ -61,7 +61,7 @@ namespace WebSocketSimpleExample
         private void wsServer_NewDataReceived(object sender, MessageEventArgs e)
         {
             string result = e.Data.ToString();
-            Console.WriteLine("MessageReceived:" + e.Data.ToString());
+            Console.WriteLine("MessageReceived:" + result);
         }
 
     }
